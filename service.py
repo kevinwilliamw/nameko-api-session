@@ -64,7 +64,7 @@ class GatewayService:
     def logout(self, request):
         cookies = request.cookies
         if cookies:
-            session_data = self.session_provider.delete_session(cookies['sessionID'])
+            self.session_provider.delete_session(cookies['sessionID'])
             response = Response('User Logged Out')
             return response
         else:
